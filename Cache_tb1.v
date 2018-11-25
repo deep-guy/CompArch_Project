@@ -23,7 +23,7 @@ module cache_tb();
           #10;
         end
         $fclose(file);
-        #1000 $finish;
+        #10000000 $finish;
     end
 
     always begin
