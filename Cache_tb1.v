@@ -19,8 +19,8 @@ module cache_tb();
 
         file = $fopen("input_files/swim_modified.trace", "r");
         while(! $feof(file)) begin
-          tmp = $fscanf(file, "%h\n", address);
-          #10;
+            tmp = $fscanf(file, "%h\n", address);
+            #10;
         end
         $fclose(file);
         #10000000 $finish;
