@@ -17,11 +17,11 @@ begin
     tag = address[31:12];
     if (tagArray[index] == tag) begin
         hitCount = hitCount + 1;
-        $display ("Cache hit!! %d", hitCount);
+        $display ("Cache hit %d", hitCount);
     end
     else begin
         missCount = missCount + 1;
-        $display ("Cache Miss %d:(", missCount);
+        $display ("Cache Miss %d", missCount);
         addressCopy = address;
         addressCopy[3:0] = 0;
         tagArray[index] = tag;

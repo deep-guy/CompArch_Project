@@ -1,0 +1,5 @@
+cat "swim.trace" | awk '{print $2}' > "swim_modified.trace"
+cat "gcc.trace" | awk '{print $2}' > "gcc_modified.trace"
+cat "gzip.trace" | awk '{print $2}' > "gzip_modified.trace"
+cat "mcf.trace" | awk '{print $2}' > "mcf_modified.trace"
+cat "twolf.trace" | awk '{print $2}' > "twolf_modified.trace"
