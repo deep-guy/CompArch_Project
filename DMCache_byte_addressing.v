@@ -11,7 +11,7 @@ reg[6:0] i;
 reg[31:0] addressCopy;
 
 
-always @(address)
+always @(posedge clk)
 begin
     index = address[13:6];
     tag = address[31:14];
