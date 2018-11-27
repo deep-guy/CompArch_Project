@@ -17,13 +17,23 @@ module cache_tb();
         clk = 0; #5
         clk = 1; #5
 
-        file = $fopen("input_files/swim_modified.trace", "r");
-        while(! $feof(file)) begin
+        file = $fopenr("input_files/swim_modified.trace");
+        //file = $fopenr("input_files/gzip_modified.trace");
+        //file = $fopenr("input_files/gcc_modified.trace");
+        //file = $fopenr("input_files/mcf_modified.trace");
+        //file = $fopenr("input_files/twolf_modified.trace");
+        while(1) begin
             tmp = $fscanf(file, "%h\n", address);
             #10;
+
+            if($feof(file)) begin
+              $display ("Total Hits:    %d", hitCount);
+              $display ("Total Misses: %d", missCount);
+              $fclose(file);
+              $finish;
+            end
         end
-        $fclose(file);
-        #10000000 $finish;
+
     end
 
     always begin
